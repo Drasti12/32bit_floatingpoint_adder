@@ -83,6 +83,7 @@ Floating point adders are widely used in:
 ## Let's begin
 
  ### Step-1 : Check if the Synopsys tools like VCS, Verdi, and others are correctly installed and available in the system path.
+ ```bash
 which vcs
 
 which verdi
@@ -92,9 +93,11 @@ which icc2_shell
 which dc_shell
 
 which pt_shell
+```
 
  ### Now we can launch Synopsys Tools
 Use these commands to open the GUI or shell for each tool as needed for development or debugging.
+```bash
 verdi # Launch Verdi waveform viewer
 
 icc2_shell # Launch ICC2 synthesis shell
@@ -102,11 +105,14 @@ icc2_shell # Launch ICC2 synthesis shell
 dc_shell # Launch Design Compiler shell
 
 start_gui # Launch GUI mode
+```
 
  ### Step-2 : Now Create Verilog Files and save it
+ ```bash
 - fp_adder.v (RTL VERILOG CODE FILE)
 
 - fp_adder_tb.v (TESTBENCH FILE)
+```
 
 
  ### Design Simulation Using VCS
@@ -173,12 +179,14 @@ scenarios.
 
 ### ✅ Analyze the Results
 After synthesis is complete, use these commands in DC shell to analyze:
+```bash
 
 report_qor # Shows quality of results
 
 report_timing # Displays slack time
 
 report_power # Power Consumption
+```
 
 ### View Final Output
 ```bash 
@@ -227,13 +235,9 @@ icc2_shell
 run power_planning.tcl , placement.tcl , clock.tcl ,route.tcl
 
 ## 📊 Reports 
-![WhatsApp Image 2025-06-01 at 11 45 47 PM](https://github.com/user-attachments/assets/f4eee883-4b97-4128-9a2b-47e8b2f6a87c)
-![WhatsApp Image 2025-06-01 at 11 45 47 PM(1)](https://github.com/user-attachments/assets/7a9914ec-c7ae-4d72-af83-714215ef92c7)
-![WhatsApp Image 2025-06-01 at 11 45 48 PM](https://github.com/user-attachments/assets/bc732134-3675-4b3c-a6ef-7967b81b53bb)
-![WhatsApp Image 2025-06-01 at 11 45 48 PM(1)](https://github.com/user-attachments/assets/c222f1e6-b96c-4ea1-919e-e3d938f6a65c)
-![WhatsApp Image 2025-06-01 at 11 45 48 PM(2)](https://github.com/user-attachments/assets/b72f1cef-d268-43bc-87ea-2e331bf784e3)
-![WhatsApp Image 2025-06-01 at 11 45 49 PM](https://github.com/user-attachments/assets/04be1d31-7310-4307-88a3-031d240233e5)
-![WhatsApp Image 2025-06-01 at 11 45 49 PM(1)](https://github.com/user-attachments/assets/91be28f9-087f-4ecf-b9a1-b739d3f5462b)
+![1749113736376473](https://github.com/user-attachments/assets/4b77b85f-0c15-4d2b-889e-379cef68190b)
+
+![1749113894385073](https://github.com/user-attachments/assets/12538198-8a60-4a71-ae6d-c92e8c4b5138)
 
 
 
@@ -251,6 +255,16 @@ run power_planning.tcl , placement.tcl , clock.tcl ,route.tcl
 ### Layout
 ![Project_schematic_view](https://github.com/user-attachments/assets/9ef866a8-aeaf-406f-9d1f-a347af19e324)
 ### Schematic View
+## 💻 Summary
+This project successfully implements the complete RTL to GDSII flow for a 32-bit IEEE 754 Floating Point Adder using Verilog HDL and industry-standard Synopsys EDA tools. The design was modeled, verified, synthesized, and physically realized using the SAED 32nm standard cell library under Typical-Typical (TT) corner conditions.
+
+✔️ Functional verification was carried out using testbench-driven simulation with VCS and Verdi, ensuring accurate IEEE 754 addition behavior.
+
+✔️ Design Compiler (DC) was used to perform logic synthesis with defined timing, area, and power constraints, achieving positive slack within acceptable limits.
+
+✔️ The complete physical design flow, including floorplanning, power planning, placement, clock tree synthesis (CTS), and routing, was executed using ICC2.
+
+✔️ Final layout and GDSII were successfully generated, passing DRC checks and post-route timing analysis.
 
 ## 💻 Key Commands Summary
 
@@ -272,13 +286,14 @@ run power_planning.tcl , placement.tcl , clock.tcl ,route.tcl
 - RTL TO GDS Flow Training Series
 - https://www.vlsiexpert.com/
 - https://www.chipgrad.com/
+- Lecture Notes and Tutorials provided by Mr. Puneet Mittal
 
-## 🙏 Credits
+## 🙏 Acknowledgement
 
 This project was carried out as part of the RTL to GDSII flow lab under the guidance of:
 
-- **Mr. Puneet Mittal**
-- Special thanks to Pandit Deendayal Energy University and VLSI Expert/Chipgrad for enabling access to Synopsys Standard tools and training materials. 
+- **Mr. Puneet Mittal**, VLSI Expert – for his invaluable mentorship, technical insights, and consistent support throughout the project.
+- I would also like to extend my gratitude to **Pandit Deendayal Energy University (PDEU)** and **ChipGrad/VLSI Expert** for providing access to Synopsys standard EDA tools and high-quality training materials, which enabled hands-on experience with industry-standard VLSI design flow.
 
  
 
